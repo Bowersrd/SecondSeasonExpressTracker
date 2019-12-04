@@ -4,7 +4,7 @@
       <h1 class="title">Team Settings</h1>
       <div class="team-container">
         <font-awesome-icon class="arrow" :icon="['fas', 'sort-up']" @click="prevTeam" />
-        <img height="100%" :src="logo" alt="Team Logo" @click="changeLogo(teamId)">
+        <img height="100%" :src="logo" alt="Team Logo" @click="changeLogo(team.id)">
         <form action="POST" id="team-details">
             <h2>Team Abbreviation</h2>
             <input type="text" v-model="teamAbbrev" :placeholder="team.abbrev">
