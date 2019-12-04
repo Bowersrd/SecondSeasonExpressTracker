@@ -1,6 +1,6 @@
-# second-season-express-helper
+# Second Season Game Tracker
 
-> Helper for Second Season Express
+> A game tracker for Second Season Express Football by Plaay Games.
 
 #### Build Setup
 
