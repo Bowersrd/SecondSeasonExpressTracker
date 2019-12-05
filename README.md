@@ -1,6 +1,33 @@
 # Second Season Game Tracker
 
-> A game tracker for Second Season Express Football by Plaay Games.
+> A game tracker for Second Season Express Football by Plaay Games using Electron and Vue.
+
+### Features
+
+- Full Express Game Tracker
+- Drive and Scoring Summary
+- Shareable Game Recaps
+- Customizable Team Setup
+
+### Customizing Teams
+
+![Customization of Teams](demo/custom_team.gif) 
+
+### Starting New Game
+
+![Start New Game](demo/matchup.gif) 
+
+### Coin Toss
+
+![Coin Toss](demo/coin_toss.gif)
+
+### Playing the Game
+
+![Playing the Game](demo/gameplay.gif) 
+
+### Shareable Game Recaps
+
+![Coin Toss](demo/recap.gif) 
 
 #### Build Setup
 
