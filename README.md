@@ -9,8 +9,10 @@
 - Shareable Game Recaps
 - Customizable Team Setup
 
+### How to Play
+
 <details>
-<summary>### Customizing Teams</summary>
+<summary>Customizing Teams</summary>
 
 ![Customization of Teams](demo/custom_team.gif) 
 
@@ -20,7 +22,7 @@
 </details>
 
 <details>
-<summary>### Starting New Game</summary>
+<summary>Starting New Game</summary>
 
 ![Start New Game](demo/matchup.gif) 
 
@@ -30,7 +32,7 @@
 </details>
 
 <details>
-<summary>### Coin Toss</summary>
+<summary>Coin Toss</summary>
 
 ![Coin Toss](demo/coin_toss.gif)
 
@@ -40,7 +42,7 @@
 </details>
 
 <details>
-<summary>### Playing the Game</summary>
+<summary>Playing the Game</summary>
 
 ![Playing the Game](demo/gameplay.gif) 
 
@@ -54,7 +56,7 @@
 </details>
 
 <details>
-<summary>### Shareable Game Recaps</summary>
+<summary>Shareable Game Recaps</summary>
 
 ![Coin Toss](demo/recap.gif) 
 
@@ -64,7 +66,7 @@
 </details>
 
 <details>
-<summary>### Known Bugs</summary>
+<summary>Known Bugs</summary>
 
 - Drive Summary/Scoring Summary cannot display :30 timing.
 - Quarter by Quarter scoring does not save if you exit and continue game later.
