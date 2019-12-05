@@ -2,38 +2,45 @@
 
 > A game tracker for Second Season Express Football by Plaay Games using Electron and Vue.
 
-#### Features
+### Features
 
 - Full Express Game Tracker
 - Drive and Scoring Summary
 - Shareable Game Recaps
 - Customizable Team Setup
 
-#### Customizing Teams
+<details>
+<summary>### Customizing Teams</summary>
 
 ![Customization of Teams](demo/custom_team.gif) 
 
 - You can change team's abbreviation, city, mascot, color, and logo!
 - Hitting RESET TEAMS will remove all custom teams and reset the teams to the original 32 NFL teams.
 - Once you enter team details, hitting back will sort teams into proper alphabetical order upon returning to main menu.
+</details>
 
-#### Starting New Game
+<details>
+<summary>### Starting New Game</summary>
 
 ![Start New Game](demo/matchup.gif) 
 
 - The home team is always defaulted to your favorite team which is selectable in settings menu.
 - The away team is always a randomly selected team to start.
 - Clicking start game will overwrite any game that was in progress.
+</details>
 
-#### Coin Toss
+<details>
+<summary>### Coin Toss</summary>
 
 ![Coin Toss](demo/coin_toss.gif)
 
 - Away team always calls the coin toss.
 - Teams that win the coin toss automatically defer.
 - Team that wins the coin toss will get the ball at halftime.
+</details>
 
-#### Playing the Game
+<details>
+<summary>### Playing the Game</summary>
 
 ![Playing the Game](demo/gameplay.gif) 
 
@@ -44,17 +51,22 @@
 - Fumbles and interceptions are always done with the turnover button.
 - Fumbles that are after gain, make sure to use fumble (after gain).
 - For auto playcalling, use the GET PLAY button to get random playcall and the value for the player finder.
+</details>
 
-#### Shareable Game Recaps
+<details>
+<summary>### Shareable Game Recaps</summary>
 
 ![Coin Toss](demo/recap.gif) 
 
 - After game completion, click view recap and download to save to your PC. 
 - After save, if the recap does not open, make sure to add .JPEG to the end of your file name.
 - If you accidently close out of the end game menu, back out to main menu and click continue game.
+</details>
 
-#### Known Bugs
+<details>
+<summary>### Known Bugs</summary>
 
 - Drive Summary/Scoring Summary cannot display :30 timing.
 - Quarter by Quarter scoring does not save if you exit and continue game later.
 - Ball always is placed in the left endzone despite the scoring team.
+</details>
