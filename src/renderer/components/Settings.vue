@@ -15,6 +15,10 @@
             <h2>Team Color</h2>
             <input type="text" v-model="teamColor">
             <input type="color" v-model="teamColor"/>
+            <div class="" id="fav-team-container">
+              <input type="checkbox" id="favTeam" :checked="team.isFav" @change="changeFav(team.id)">
+              <label for="favTeam">Favorite Team?</label>
+            </div>
         </form>
         <font-awesome-icon class="arrow" :icon="['fas', 'sort-down']" @click="nextTeam" />
       </div>
@@ -38,6 +42,9 @@
       }
     },
     methods: {
+        changeFav: function (id) {
+          this.$store.dispatch('updateFav', id)
+        },
         prevTeam: function () {
             if (this.id < 1){
                 this.id = 31
@@ -209,6 +216,21 @@ $white: #ecf0f1;
     color: #fff;
     transform: rotate(-90deg);
     cursor: pointer;
+}
+
+#fav-team-container {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  label {
+    flex-basis: 200px;
+    font-size: 1.4rem;
+  }
+  input {
+    flex-basis: 70px;
+  }
 }
 
   // Keyframes

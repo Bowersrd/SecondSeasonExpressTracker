@@ -71,6 +71,13 @@ const mutations = {
   },
   UPDATE_LOGO (state, { value, team }) {
     state.teams[team].logo = value
+  },
+  UPDATE_FAV (state, id) {
+    const currentFav = state.teams.find(team => team.isFav)
+    const newFav = state.teams.find(team => team.id == id)
+
+    currentFav.isFav = false
+    newFav.isFav = true
   }
 }
   
@@ -80,6 +87,9 @@ const actions = {
   },
   sortTeams ({ commit }) {
     commit('SORT_TEAMS')
+  },
+  updateFav ({ commit }, id) {
+    commit('UPDATE_FAV', id)
   }
 }
 
