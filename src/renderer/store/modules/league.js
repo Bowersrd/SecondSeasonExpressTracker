@@ -43,11 +43,7 @@ const state = getDefaultState()
 const getters = {
   favTeam: (state) => {
     return state.teams.find(team => team.isFav).id
-  },
-  // sortedTeams: (state) => {
-  //   const sortTeams = [...state.teams].sort((a, b) => (a.city > b.city) ? 1 : -1)
-  //   return sortTeams
-  // }
+  }
 }
   
 const mutations = {
@@ -78,6 +74,13 @@ const mutations = {
 
     currentFav.isFav = false
     newFav.isFav = true
+  },
+  ADD_TEAM (state) {
+    const count = state.teams.length
+    const newTeams = state.teams.length - 32
+    const newTeam = {id: count, city: 'NEW', mascot: 'TEAM', abbrev: `TEAM ${newTeams}`, color: '#111111', isFav: false, logo: `/logos/nfl.png`}
+
+    state.teams.push(newTeam)
   }
 }
   
@@ -90,6 +93,9 @@ const actions = {
   },
   updateFav ({ commit }, id) {
     commit('UPDATE_FAV', id)
+  },
+  addTeam ({ commit }) {
+    commit('ADD_TEAM')
   }
 }
 

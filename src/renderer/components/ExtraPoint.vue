@@ -28,17 +28,21 @@ export default {
     },
     computed: {
         getModalColor () {
-            if (this.homeHasBall) {
-                return this.$store.state.league.teams[this.$store.state.game.homeTeam].color
-            } else {
-                return this.$store.state.league.teams[this.$store.state.game.awayTeam].color
-            }
+          if (this.homeHasBall) {
+            let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.homeTeam)
+            return team.color
+          } else {
+            let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.awayTeam)
+            return team.color
+          }
         },
         getMascot () {
             if (this.homeHasBall) {
-                return this.$store.state.league.teams[this.$store.state.game.homeTeam].mascot
+              let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.homeTeam)
+              return team.mascot
             } else {
-                return this.$store.state.league.teams[this.$store.state.game.awayTeam].mascot
+              let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.awayTeam)
+              return team.mascot
             }
         },
         homeHasBall () {

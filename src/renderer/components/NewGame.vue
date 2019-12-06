@@ -49,7 +49,9 @@ export default {
     data: () => {
         return{
             awayId: 0,
-            homeId: 0
+            homeId: 0,
+            selectedAway: 0,
+            selectedHome: 0
         }            
     },
     methods: {
@@ -83,8 +85,8 @@ export default {
         },
         setTeam: function(){
             this.$store.dispatch('resetGameState')
-            this.$store.dispatch('getAwayTeam', {id: this.awayId})
-            this.$store.dispatch('getHomeTeam', {id: this.homeId})
+            this.$store.dispatch('getAwayTeam', {id: this.awaySelect})
+            this.$store.dispatch('getHomeTeam', {id: this.homeSelect})
         },
     },
     computed: {
@@ -96,22 +98,32 @@ export default {
         },
         awayImg(){
             const path = require('path')
-            if (this.$store.state.league.teams[this.awayId].logo.includes('/logos/')) {
-              return path.join(__static, this.$store.state.league.teams[this.awayId].logo)
+            let team = this.awayTeam
+            if (team.logo.includes('/logos/')) {
+              return path.join(__static, team.logo)
             } else {
-              return this.$store.state.league.teams[this.awayId].logo
+              return team.logo
             } 
         },
         homeImg(){
             const path = require('path')
-            if (this.$store.state.league.teams[this.homeId].logo.includes('/logos/')) {
-              return path.join(__static, this.$store.state.league.teams[this.homeId].logo)
+            let team = this.homeTeam
+            if (team.logo.includes('/logos/')) {
+              return path.join(__static, team.logo)
             } else {
-              return this.$store.state.league.teams[this.homeId].logo
+              return team.logo
             }
         },
+        awaySelect () {
+            return this.$store.state.league.teams[this.awayId].id
+        },
+        homeSelect () {
+            return this.$store.state.league.teams[this.homeId].id
+        },
         favTeam () {
-            return this.$store.getters.favTeam
+            let id = this.$store.getters.favTeam
+            let team = this.$store.state.league.teams.find(team => team.id == id)
+            return this.$store.state.league.teams.indexOf(team)
         },
         randTeam () {
             return Math.floor(Math.random() * this.$store.state.league.teams.length - 1) + 1  
@@ -120,9 +132,6 @@ export default {
     mounted() {
         this.homeId = this.favTeam
         this.awayId = this.randTeam
-        if (this.awayId == this.homeId) {
-            this.awayId = this.randTeam
-        }
     } 
 }
 </script>

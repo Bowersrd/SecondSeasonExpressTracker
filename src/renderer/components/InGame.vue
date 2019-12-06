@@ -56,25 +56,29 @@ import GameRecap from './GameRecap'
     },
     computed: {
         awayTeam () {
-            return this.$store.state.league.teams[this.$store.state.game.awayTeam]
+            return this.$store.state.league.teams.find(team => team.id == this.$store.state.game.awayTeam)
         },
         homeTeam () {
-            return this.$store.state.league.teams[this.$store.state.game.homeTeam]
+            return this.$store.state.league.teams.find(team => team.id == this.$store.state.game.homeTeam)
         },
         midfield () {
           const path = require('path')
-          if (this.$store.state.league.teams[this.$store.state.game.homeTeam].logo.includes('/logos/')) {
-            return path.join(__static, this.$store.state.league.teams[this.$store.state.game.homeTeam].logo)
+          let team = this.homeTeam
+
+          if (team.logo.includes('/logos/')) {
+            return path.join(__static, team.logo)
           } else {
-            return this.$store.state.league.teams[this.$store.state.game.homeTeam].logo
+            return team.logo
           }
         },
         awayLogo () {
           const path = require('path')
-          if (this.$store.state.league.teams[this.$store.state.game.awayTeam].logo.includes('/logos/')) {
-            return path.join(__static, this.$store.state.league.teams[this.$store.state.game.awayTeam].logo)
+          let team = this.awayTeam
+
+          if (team.logo.includes('/logos/')) {
+            return path.join(__static, team.logo)
           } else {
-            return this.$store.state.league.teams[this.$store.state.game.awayTeam].logo
+            return team.logo
           }
         },
         zone () {

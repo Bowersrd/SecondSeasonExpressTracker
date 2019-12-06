@@ -76,27 +76,31 @@ export default {
         viewRecap: function () {
             return this.$store.state.game.gameRecap
         },
+        awayTeam: function () {
+            return this.$store.state.league.teams.find(team => team.id == this.$store.state.game.awayTeam)
+        },
+        homeTeam: function () {
+            return this.$store.state.league.teams.find(team => team.id == this.$store.state.game.homeTeam)
+        },
         awayLogo: function () {
            const path = require('path')
-            if (this.$store.state.league.teams[this.$store.state.game.awayTeam].logo.includes('/logos/')) {
-                return path.join(__static, this.$store.state.league.teams[this.$store.state.game.awayTeam].logo)
+           let team = this.awayTeam
+
+            if (team.logo.includes('/logos/')) {
+                return path.join(__static, team.logo)
             } else {
-                return this.$store.state.league.teams[this.$store.state.game.awayTeam].logo
+                return team.logo
             }
         },
         homeLogo: function () {
             const path = require('path')
-            if (this.$store.state.league.teams[this.$store.state.game.homeTeam].logo.includes('/logos/')) {
-                return path.join(__static, this.$store.state.league.teams[this.$store.state.game.homeTeam].logo)
+            let team = this.homeTeam
+
+            if (team.logo.includes('/logos/')) {
+                return path.join(__static, team.logo)
             } else {
-                return this.$store.state.league.teams[this.$store.state.game.homeTeam].logo
+                return team.logo
             }
-        },
-        awayTeam: function () {
-            return this.$store.state.league.teams[this.$store.state.game.awayTeam]
-        },
-        homeTeam: function () {
-            return this.$store.state.league.teams[this.$store.state.game.homeTeam]
         },
         awayTotalScore: function () {
             return this.$store.getters.awayTotal

@@ -52,9 +52,11 @@ export default {
         },
         getModalColor () {
           if (this.coinWin) {
-            return this.$store.state.league.teams[this.$store.state.game.awayTeam].color
+            let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.awayTeam)
+            return team.color
           } else {
-            return this.$store.state.league.teams[this.$store.state.game.homeTeam].color
+            let team = this.$store.state.league.teams.find(team => team.id == this.$store.state.game.homeTeam)
+            return team.color
           }
         },
         isOvertime () {

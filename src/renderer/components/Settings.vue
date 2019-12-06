@@ -25,6 +25,7 @@
       <div class="btn-container">
         <router-link :to="button.route" class="btn" v-for="button in buttons" :key="button.name" @click.native="sortTeams"> {{  button.name }} </router-link>
         <a href="#" class="btn" @click="resetTeams">Reset Teams</a>
+        <a href="#" class="btn" @click="addTeam">Add Team</a>
       </div>
     </div>
   </div>
@@ -45,21 +46,28 @@
         changeFav: function (id) {
           this.$store.dispatch('updateFav', id)
         },
+        addTeam: function () {
+          this.$store.dispatch('addTeam')
+          this.id = this.$store.state.league.teams.length - 1
+        },
         prevTeam: function () {
+          let teams = this.$store.state.league.teams.length - 1
             if (this.id < 1){
-                this.id = 31
+                this.id = teams
             } else {
                 this.id--
             }
         },
         nextTeam: function () {
-            if (this.id > 30){
+          let teams = this.$store.state.league.teams.length - 2
+            if (this.id > teams){
                 this.id = 0
             } else {
                 this.id++
             }
         },
         resetTeams: function () {
+          this.id = 0
           this.$store.dispatch('resetTeams')
         },
         sortTeams: function () {
