@@ -1,5 +1,14 @@
 <template>
   <div id="wrapper">
+    <div id="modal-wrapper" v-if="!isLatest">
+      <div id="modal">
+        <h1>New Version Available</h1>
+        <p>It looks like you have an outdated version. Click download to download new version to your computer or you can continue without updating.</p>
+        <p id="notes">Release Notes <br> {{ releaseNotes }} </p>
+        <a :href="downloadLink" class="btn">Download</a>
+        <a href="#" class="btn" @click="closeModal">Close</a>
+      </div>
+    </div>
     <div class="container">
       <h1 class="title">Second Season Express</h1>
       <div class="btn-container">
@@ -11,6 +20,7 @@
 
 <script>
   export default {
+    props: ['version'],
     name: 'start-screen',
     data: () => {
       return {
@@ -18,8 +28,29 @@
           {name: 'Start New Game', route: '/newgame'},
           {name: 'Continue Game', route: '/ingame'},
           {name: 'Settings', route: '/settings'}
-        ]
+        ],
+        latestVersion: '',
+        releaseNotes: '',
+        downloadLink: null,
+        isLatest: true
       }
+    },
+    methods: {
+      closeModal: function () {
+        this.isLatest = true
+      }
+    },
+    mounted () {
+      this.axios.get('https://api.github.com/repos/Bowersrd/SecondSeasonExpressTracker/releases').then(response => {
+        this.latestVersion = response.data[0].name.substring(0, 6)
+        this.releaseNotes = response.data[0].body
+        this.downloadLink = response.data[0].assets[0].browser_download_url
+        if (this.latestVersion == this.version) {
+          this.isLatest = true
+        } else {
+          this.isLatest = false
+        }
+      })
     }
   }
 </script>
@@ -66,6 +97,48 @@ $white: #ecf0f1;
   &:hover{
     background: $white;
     color: #000;
+  }
+}
+
+#modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  width: 700px;
+  height: 570px;
+  background: #111;
+  outline: 1px solid #333;
+  border: 1px solid #222;
+  color: $white;
+  text-transform: uppercase;
+  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .btn {
+    animation: none;
+  }
+  h1 {
+    margin: 20px 0 20px;
+  }
+  p {
+    width: 70%;
+    margin-bottom: 20px;
+    &#notes {
+      font-size: 0.85rem;
+      background: #222;
+      padding: 20px;
+    }
   }
 }
 

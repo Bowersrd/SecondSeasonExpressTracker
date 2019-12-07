@@ -4,9 +4,9 @@
       <a href="#"><font-awesome-icon :icon="['fas', 'minus-circle']" @click="minWindow" /></a>
       <a href="#"><font-awesome-icon :icon="['fas', 'times-circle']" @click="closeWindow" /></a>
     </nav>
-    <router-view></router-view>
+    <router-view :version="version"></router-view>
     <div class="version">
-      <p>v0.6.0</p>
+      <p> {{ version }} </p>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@
 <script>
   export default {
     name: 'second-season-express',
+    data: () => {
+      return {
+        version: 'v0.6.0'
+      }
+    },
     methods: {
       closeWindow: () => {
         window.close()
