@@ -26,6 +26,7 @@
         <router-link :to="button.route" class="btn" v-for="button in buttons" :key="button.name" @click.native="sortTeams"> {{  button.name }} </router-link>
         <a href="#" class="btn" @click="resetTeams">Reset Teams</a>
         <a href="#" class="btn" @click="addTeam">Add Team</a>
+        <a href="#" class="btn" @click="removeTeam(team.id)">Remove Team</a>
       </div>
     </div>
   </div>

@@ -241,6 +241,8 @@ const state = getDefaultState()
           Vue.set(state.awayScores, state.quarter - 1, aScore)
           state.isTouchdown = true
           state.currentZone = 0
+        } else if (state.currentZone < 1) {
+          state.currentZone = 2
         }
       } else {
         state.currentZone += value
@@ -249,6 +251,8 @@ const state = getDefaultState()
           Vue.set(state.homeScores, state.quarter - 1, hScore)
           state.isTouchdown = true
           state.currentZone = 0
+        } else if (state.currentZone > 8) {
+          state.currentZone = 7
         }
       }
     },

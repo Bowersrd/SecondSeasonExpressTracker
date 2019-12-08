@@ -66,7 +66,7 @@ const getDefaultState = () => {
             {play: `find the seam on the return and take it back all the way.`, poss:''}
         ],
         turnover: [
-            {play: `make a play on the ball and intercept it, no return.`, poss:''},
+            {play: `make a play on the ball and intercept it, offense takes over.`, poss:''},
             {play: `get the interception and are able to make a return.`, poss:''},
             {play: `make the interception and return it all the way.`, poss:''},
             {play: `recover the ball after the offense fumbles.`, poss:''},
