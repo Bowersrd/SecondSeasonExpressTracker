@@ -187,6 +187,9 @@ export default {
   align-items: center;
   justify-content: center;
   margin: 0 20px;
+  @media screen and (max-width: 1599px) {
+    margin: 0 5px;
+  }
 }
 
 .scoreboard{
@@ -201,12 +204,22 @@ export default {
   position: absolute;
   top: 35%;
   left: 27%;
+  @media screen and (max-width: 1599px) {
+    top: 38%;
+    left: 26%;
+    width: 25px;
+  }
 }
 
 #homePossession{
   position: absolute;
   top: 35%;
   right: 27%;
+  @media screen and (max-width: 1599px) {
+    top: 38%;
+    right: 26%;
+    width: 25px;
+  }
 }
 
 .score{
@@ -216,6 +229,9 @@ export default {
   height: 95px;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 1599px) {
+    font-size: 3.5rem;
+  }
 }
 
 #qtr-score{
@@ -234,6 +250,10 @@ export default {
   flex-direction: column;
   justify-content: center;
   font-weight: 700;
+  @media screen and (max-width: 1599px) {
+    width: 65%;
+    font-size: 0.85rem;
+  }
 }
 
 #qtr, #awayQtr, #homeQtr{

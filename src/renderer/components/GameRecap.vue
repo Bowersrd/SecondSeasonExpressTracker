@@ -127,6 +127,11 @@ $white: #ecf0f1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    @media screen and (max-width: 1599px) {
+        flex-direction: row;   
+        padding-left: 70px; 
+    }
   }
 
   .recap-container {
@@ -157,6 +162,18 @@ $white: #ecf0f1;
             background: $white;
             color: #000;
         }
+        }
+        @media screen and (max-width: 1599px) {
+            flex-direction: column;
+            .btn {
+                background: #111;
+                color: $white;
+                opacity: 0.9;
+                &:hover{
+                    background: $white;
+                    color: #000;
+                }
+            }
         }
   }
 

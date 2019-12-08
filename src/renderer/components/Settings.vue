@@ -50,6 +50,14 @@
           this.$store.dispatch('addTeam')
           this.id = this.$store.state.league.teams.length - 1
         },
+        removeTeam: function (id) {
+          this.$store.dispatch('removeTeam', id)
+          if (id == 0) {
+            this.id = 0
+          } else {
+            this.id = id - 1
+          }
+        },
         prevTeam: function () {
           let teams = this.$store.state.league.teams.length - 1
             if (this.id < 1){
@@ -152,10 +160,16 @@ $white: #ecf0f1;
   display: flex;
   flex-direction: column;
   text-align: center;
+  @media screen and (max-width: 1599px) {
+    margin-top: 60px;
+  }
 }
 
 .btn-container{
   display: flex;
+  @media screen and (max-width: 1599px) {
+    margin-top: 60px;
+  }
 }
 
 .title{
@@ -165,6 +179,10 @@ $white: #ecf0f1;
   font-size: 3.5rem;
   color: $white;
   margin-bottom: 25px;
+  @media screen and (max-width: 1599px) {
+    font-size: 3rem;
+    top: -70px;
+  }
 }
 
 .btn{
@@ -180,6 +198,11 @@ $white: #ecf0f1;
     background: $white;
     color: #000;
   }
+  @media screen and (max-width: 1599px) {
+    width: 150px;
+    height: 40px;
+    padding: 12px 20px;
+  }
 }
 
 .team-container{
@@ -192,6 +215,9 @@ $white: #ecf0f1;
     & img {
       cursor: pointer;
     }
+    @media screen and (max-width: 1599px) {
+    height: 300px;
+  }
 }
 
 #team-details{

@@ -324,6 +324,9 @@ export default {
         display: flex;
         flex-direction: column;
         position: relative;
+        @media screen and (max-width: 1599px) {
+            margin: 20px 5px;
+        }
     }
 
     .team-header{
@@ -337,6 +340,12 @@ export default {
             color: #FFF;
             text-transform: uppercase;
             margin: 0 10px;
+        }
+        @media screen and (max-width: 1599px) {
+            height: 55px;
+            h1 {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -353,6 +362,9 @@ export default {
         }
         &.game-btn{
             color: red;
+        }
+        @media screen and (max-width: 1599px) {
+            
         }
     }
 
@@ -372,6 +384,10 @@ export default {
         }
         &:active{
             transform: scale(0.9)
+        }
+        @media screen and (max-width: 1599px) {
+            padding: 8px 20px;
+            margin: 5px auto;
         }
     }
 
@@ -400,6 +416,8 @@ export default {
         .run {
             color: red;
         }
-
+        @media screen and (max-width: 1599px) {
+            height: 150px;
+        }
     }
 </style>

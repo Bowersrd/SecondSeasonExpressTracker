@@ -9,7 +9,7 @@
       <Scoreboard />
       <div class="field">
         <img id="midfield" width="70px" :src="midfield" alt="Team Logo">
-        <img id="football" width="45px" src="../assets/football.png" alt="Football" :style="{left: zone}">
+        <img id="football" src="../assets/football.png" alt="Football" :style="{left: zone}">
       </div>
       <Tracker :logoAway="awayLogo" :logoHome="midfield" />
     </div>
@@ -108,6 +108,9 @@ $white: #ecf0f1;
 
 .container{
   align-items: center;
+  @media screen and (max-width: 1599px) {
+    width: 53%
+  }
 }
 
 .field{
@@ -123,13 +126,22 @@ $white: #ecf0f1;
   position: absolute;
   top: 42%;
   left: 46.5%;
+  @media screen and (max-width: 1599px) {
+    top: 38%;
+    left: 45%;
+  }
 }
 
 #football{
   position: absolute;
+  width: 45px;
   top: 47%;
   left: 0;
   transition: left 1.25s ease;
+  @media screen and (max-width: 1599px) {
+    top: 46.5%;
+    width: 35px;
+  }
 }
 
 .container, .btn-container{

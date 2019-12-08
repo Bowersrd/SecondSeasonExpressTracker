@@ -5,7 +5,7 @@
             <div class="team-select">
                 <div id="away-select">
                     <div class="logo" :style="`backgroundColor: ${awayTeam.color}`">
-                        <img width="90%" :src="awayImg" alt="Away Team Logo">
+                        <img width="90%" :src="awayImg" alt="Away Team Logo" class="main-logo">
                         <img width="125%" :src="awayImg" alt="Away Team Logo" class="logoBg">
                     </div>
                     <div class="name" id="awayName" :style="`backgroundColor: ${awayTeam.color}`">
@@ -21,7 +21,7 @@
                 </div>
                 <div id="home-select">
                     <div class="logo" :style="`backgroundColor: ${homeTeam.color}`">
-                        <img width="90%" :src="homeImg" alt="Home Team Logo">
+                        <img width="90%" :src="homeImg" alt="Home Team Logo" class="main-logo">
                         <img width="125%" :src="homeImg" alt="Home Team Logo" class="logoBg">
                     </div>
                     <div class="name" id="homeName" :style="`backgroundColor: ${homeTeam.color}`">
@@ -49,9 +49,7 @@ export default {
     data: () => {
         return{
             awayId: 0,
-            homeId: 0,
-            selectedAway: 0,
-            selectedHome: 0
+            homeId: 0
         }            
     },
     methods: {
@@ -159,6 +157,9 @@ $white: #ecf0f1;
   font-size: 3rem;
   color: $white;
   margin-bottom: 25px;
+  @media screen and (max-width: 1599px) {
+        font-size: 2.5rem;
+    }
 }
 
 .team-select{
@@ -167,6 +168,9 @@ $white: #ecf0f1;
     display: flex;
     align-items: center;
     margin-bottom: 35px;
+    @media screen and (max-width: 1599px) {
+        height: 400px;
+    }
 }
 
 #away-select, #home-select{
@@ -187,6 +191,9 @@ $white: #ecf0f1;
     opacity: 0.2;
     z-index: -1;
     filter: blur(5px);
+    @media screen and (max-width: 1599px) {
+        top: -110px;
+    }
 }
 
 .logo{
@@ -195,6 +202,12 @@ $white: #ecf0f1;
     z-index: 1;
     & img{
         filter: drop-shadow(10px 15px 15px #000);
+    }
+    & .main-logo {
+        @media screen and (max-width: 1599px) {
+            position: relative;
+            top: -25px;
+        }
     }
 }
 
@@ -219,6 +232,16 @@ $white: #ecf0f1;
         font-size: 3rem;
         font-weight: 700;
         letter-spacing: 1px;
+    }
+    @media screen and (max-width: 1599px) {
+        line-height: 1.7rem;
+        padding: 10px;
+        .city {
+            font-size: 1rem;
+        }
+        .mascot {
+            font-size: 2.5rem;
+        }
     }
 }
 
@@ -266,6 +289,9 @@ $white: #ecf0f1;
             color: red;
             cursor: pointer;
         }
+    }
+    @media screen and (max-width: 1599px) {
+        font-size: 2.5rem;
     }
 }
 

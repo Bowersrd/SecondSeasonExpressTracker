@@ -83,6 +83,9 @@ export default {
         border-left: 1px solid #222;
         border-right: 1px solid #222;
         position: relative;
+        @media screen and (max-width: 1599px) {
+            margin-bottom: 15px;
+        }
     }
 
     #drive-bar{
@@ -151,6 +154,9 @@ export default {
                     color: yellow;
                 }
             }
+        }
+        @media screen and (max-width: 1599px) {
+            height: 145px;
         }
     }
 

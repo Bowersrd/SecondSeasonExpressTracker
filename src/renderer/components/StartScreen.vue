@@ -10,6 +10,7 @@
       </div>
     </div>
     <div class="container">
+      <font-awesome-icon id="screen-size" :icon="['fas', 'desktop']" @click="changeWindowSize" />
       <h1 class="title">Second Season Express</h1>
       <div class="btn-container">
         <router-link :to="button.route" class="btn" v-for="button in buttons" :key="button.name"> {{  button.name }} </router-link>
@@ -38,7 +39,16 @@
     methods: {
       closeModal: function () {
         this.isLatest = true
-      }
+      },
+      changeWindowSize: function () {
+        const winX = window.outerWidth
+
+        if (winX === 1600) {
+          window.resizeTo(1200, 700)
+        } else {
+          window.resizeTo(1600, 900)
+        }
+      } 
     },
     mounted () {
       this.axios.get('https://api.github.com/repos/Bowersrd/SecondSeasonExpressTracker/releases').then(response => {
@@ -105,7 +115,7 @@ $white: #ecf0f1;
   height: 100vh;
   background: rgba(0,0,0,0.75);
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,6 +149,21 @@ $white: #ecf0f1;
       background: #222;
       padding: 20px;
     }
+  }
+}
+
+#screen-size {
+  font-size: 1.2rem;
+  color: $white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.15)
   }
 }
 

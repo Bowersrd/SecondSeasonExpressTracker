@@ -81,6 +81,9 @@ const mutations = {
     const newTeam = {id: count, city: 'NEW', mascot: 'TEAM', abbrev: `TEAM ${newTeams}`, color: '#111111', isFav: false, logo: `/logos/nfl.png`}
 
     state.teams.push(newTeam)
+  },
+  REMOVE_TEAM (state, id) {
+    state.teams.splice(id, 1)
   }
 }
   
@@ -96,6 +99,9 @@ const actions = {
   },
   addTeam ({ commit }) {
     commit('ADD_TEAM')
+  },
+  removeTeam ({ commit }, id) {
+    commit('REMOVE_TEAM', id)
   }
 }
 

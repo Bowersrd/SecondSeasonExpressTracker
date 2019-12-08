@@ -16,7 +16,7 @@
     name: 'second-season-express',
     data: () => {
       return {
-        version: 'v0.6.0'
+        version: 'v0.6.5'
       }
     },
     methods: {
@@ -72,6 +72,11 @@
       color: #fff;
       font-size: 0.8rem;
       margin: 0 0 10px 15px;
+    }
+    @media screen and (max-width: 1599px) {
+      p {
+        margin: 0 0 3px 15px;
+      }
     }
   }
 
