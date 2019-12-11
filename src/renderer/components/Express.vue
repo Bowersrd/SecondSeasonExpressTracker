@@ -18,16 +18,16 @@
 </template>
 
 <script>
-import Scoreboard from './Scoreboard'
-import Tracker from './Tracker'
-import GameControl from './GameControl'
-import CoinToss from './CoinToss'
-import ExtraPoint from './ExtraPoint'
-import EndGame from './EndGame'
-import GameRecap from './GameRecap'
+import Scoreboard from './express/Scoreboard'
+import Tracker from './express/Tracker'
+import GameControl from './express/GameControl'
+import CoinToss from './modals/CoinToss'
+import ExtraPoint from './modals/ExtraPoint'
+import EndGame from './modals/EndGame'
+import GameRecap from './modals/GameRecap'
 
   export default {
-    name: 'start-screen',
+    name: 'express',
     components: {
       Scoreboard,
       Tracker,

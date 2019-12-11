@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import playcalling from '../assets/data/playcalling.json'
+import playcalling from '../../assets/data/playcalling.json'
 
 export default {
     props: ['side', 'opp', 'logo', 'teamColor', 'ball'],

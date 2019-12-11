@@ -27,7 +27,7 @@
       return {
         buttons: [
           {name: 'Start New Game', route: '/newgame'},
-          {name: 'Continue Game', route: '/ingame'},
+          {name: 'Continue Game', route: '/express'},
           {name: 'Settings', route: '/settings'}
         ],
         latestVersion: '',

@@ -16,9 +16,9 @@ export default new Router({
       component: require('@/components/NewGame').default
     },
     {
-      path: '/ingame',
-      name: 'in-game',
-      component: require('@/components/InGame').default
+      path: '/express',
+      name: 'express',
+      component: require('@/components/Express').default
     },
     {
       path: '/settings',

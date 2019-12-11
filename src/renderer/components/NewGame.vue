@@ -38,7 +38,7 @@
             </div>
             <div class="button-container">
                 <router-link class="btn" to="/">Back</router-link>
-                <router-link class="btn" to="/ingame" @click.native="setTeam">Start Game</router-link>
+                <router-link class="btn" to="/express" @click.native="setTeam">Start Game</router-link>
             </div>
         </div> 
     </div>

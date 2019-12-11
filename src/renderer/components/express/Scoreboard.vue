@@ -14,8 +14,8 @@
             </div>
         </div>
         <div class="scoreboard">
-            <img id="awayPossession" src="../assets/poss.png" alt="Away Possession" width="30px" v-if="!possession">
-            <img id="homePossession" src="../assets/poss.png" alt="Home Possession" width="30px" v-else>
+            <img id="awayPossession" src="../../assets/poss.png" alt="Away Possession" width="30px" v-if="!possession">
+            <img id="homePossession" src="../../assets/poss.png" alt="Home Possession" width="30px" v-else>
             <div class="team-logo">
               <img :src="awayLogo" alt="Away Logo" width="90%">
             </div>
